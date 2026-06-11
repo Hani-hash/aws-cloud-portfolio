@@ -1,1 +1,308 @@
-<h1>hello from AWS</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Engineer Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #0f1117;
+            color: #ffffff;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1f2e, #232838);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 2px solid #FF9900;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #FF9900;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #a0aec0;
+        }
+
+        .badges {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: #FF9900;
+            color: #0f1117;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge.outline {
+            background: transparent;
+            border: 1px solid #FF9900;
+            color: #FF9900;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #FF9900;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #2d3748;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background: #1a1f2e;
+            border: 1px solid #2d3748;
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: #FF9900;
+        }
+
+        .project-card h3 {
+            color: #FF9900;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .project-card p {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            background: #2d3748;
+            color: #a0aec0;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-family: monospace;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .skill {
+            background: #1a1f2e;
+            border: 1px solid #2d3748;
+            color: #a0aec0;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #4a5568;
+            border-top: 1px solid #2d3748;
+            font-size: 0.85rem;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-top: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #FF9900;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            text-align: left;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            color: #FF9900;
+            margin-bottom: 6px;
+        }
+
+        .profile-info p {
+            color: #a0aec0;
+            font-size: 1.1rem;
+        }
+        .status {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #48bb78;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 2s infinite;
+.contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #1a1f2e;
+            border: 1px solid #2d3748;
+            border-radius: 10px;
+            padding: 14px 20px;
+            text-decoration: none;
+            color: #a0aec0;
+            font-size: 0.9rem;
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: #FF9900;
+            color: #FF9900;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+        }
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="profile">
+        <img src="https://hani-cloud-portfolio.s3.eu-north-1.amazonaws.com/profile.jpg" alt="Hani Khamees">
+        <div class="profile-info">
+            <h1>Hani Khamees</h1>
+            <p><span class="status"></span>AWS Cloud Engineer — Based in Germany</p>
+        </div>
+    </div>
+    <div class="badges">
+        <span class="badge">AWS Cloud Practitioner</span>
+        <span class="badge outline">SAA-C03 In Progress</span>
+        <span class="badge outline">Linux</span>
+    </div>
+</header>
+<div class="container">
+
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+
+        <div class="project-card">
+            <h3>Project 1 — Static Website</h3>
+            <p>Personal portfolio hosted on S3 + CloudFront with custom domain, HTTPS, and global CDN delivery.</p>
+            <div class="tags">
+                <span class="tag">S3</span>
+                <span class="tag">CloudFront</span>
+                <span class="tag">Route 53</span>
+                <span class="tag">ACM</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Project 2 — Web Server</h3>
+            <p>Nginx web server running on EC2 with security groups, Elastic IP, and IAM role for S3 access.</p>
+            <div class="tags">
+                <span class="tag">EC2</span>
+                <span class="tag">Nginx</span>
+                <span class="tag">IAM</span>
+                <span class="tag">Linux</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Project 3 — Coming Soon</h3>
+            <p>3-tier web application with Auto Scaling, Load Balancer, and RDS Multi-AZ database.</p>
+            <div class="tags">
+                <span class="tag">ALB</span>
+                <span class="tag">ASG</span>
+                <span class="tag">RDS</span>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+        <span class="skill">AWS EC2</span>
+        <span class="skill">AWS S3</span>
+        <span class="skill">AWS IAM</span>
+        <span class="skill">AWS CloudFront</span>
+        <span class="skill">Linux</span>
+        <span class="skill">Bash Scripting</span>
+        <span class="skill">Nginx</span>
+        <span class="skill">Git</span>
+        <span class="skill">AWS CLI</span>
+    </div>
+
+</div>
+<h2 class="section-title">Contact</h2>
+    <div class="contact">
+        <a href="mailto:hani.khamees@web.de" class="contact-card">
+            <span class="contact-icon">✉️</span>
+            <span>hani.khamees@web.de</span>
+        </a>
+        <a href="https://github.com/Hani-hash" target="_blank" class="contact-card">
+            <span class="contact-icon">🐙</span>
+            <span>github.com/Hani-hash</span>
+        </a>
+        <a href="https://www.linkedin.com/in/hani-khamees-855015132/" target="_blank" class="contact-card">
+            <span class="contact-icon">💼</span>
+            <span>linkedin.com/in/hani-khamees</span>
+        </a>
+    </div>
+<footer>
+    Hosted on AWS EC2 — eu-north-1 (Stockholm) · Built by Hani Khamees
+</footer>
+
+</body>
+</html>
