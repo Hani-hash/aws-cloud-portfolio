@@ -1,6 +1,11 @@
 # AWS Cloud Portfolio
 
+
+
 ## Project 1 — Static Website on S3 + CloudFront
+
+## Live Site
+https://admin-hani.ddns.net
 
 ### Architecture
 - S3 — stores website files
@@ -22,4 +27,4 @@ The deploy.sh script syncs local files to S3 automatically:
 Approximately $0.50/month
 
 ### Services used
-AWS S3, CloudFront, Route 53, ACM, IAM, AWS CLI
+AWS S3, CloudFront, NO-IP, ACM, IAM, AWS CLI
