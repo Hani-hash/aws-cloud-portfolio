@@ -190,18 +190,19 @@ Resources:
     Properties:
       LaunchTemplateName: project2-launch-template
       LaunchTemplateData:
-        ImageId: ami-075449515af5df0d1
+        image_id      = "ami-023b6eace47afd3b4"
         InstanceType: t3.micro
         SecurityGroupIds:
           - !Ref EC2SG
-        UserData:
-          Fn::Base64: |
-            #!/bin/bash
-            dnf update -y
-            dnf install -y nginx
-            systemctl start nginx
-            systemctl enable nginx
-            echo "<h1>Auto Scaled Web Server - $(hostname)</h1>" > /usr/share/nginx/html/index.html
+        user_data = base64encode(<<-EOF
+    #!/bin/bash
+    dnf update -y
+    dnf install -y nginx
+    systemctl start nginx
+    systemctl enable nginx
+    echo "<h1>Auto Scaled Web Server - $(hostname)</h1>" > /usr/share/nginx/html/index.html
+  EOF
+  )
 
   # ==================
   # LOAD BALANCER
