@@ -6,7 +6,7 @@
     <title>Cloud Engineer Portfolio</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             font-family: 'Segoe UI', sans-serif;
             background: #0f1117;
@@ -18,17 +18,6 @@
             padding: 60px 20px;
             text-align: center;
             border-bottom: 2px solid #FF9900;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            color: #FF9900;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            color: #a0aec0;
         }
 
         .badges {
@@ -170,6 +159,7 @@
             color: #a0aec0;
             font-size: 1.1rem;
         }
+
         .status {
             display: inline-block;
             width: 8px;
@@ -178,9 +168,17 @@
             border-radius: 50%;
             margin-right: 6px;
             animation: pulse 2s infinite;
-.contact {
-            display: flex;
-            flex-wrap: wrap;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 14px;
             margin-bottom: 40px;
         }
@@ -188,31 +186,125 @@
         .contact-card {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 14px;
             background: #1a1f2e;
             border: 1px solid #2d3748;
-            border-radius: 10px;
-            padding: 14px 20px;
+            border-radius: 12px;
+            padding: 16px 20px;
             text-decoration: none;
-            color: #a0aec0;
-            font-size: 0.9rem;
-            transition: border-color 0.3s, color 0.3s;
+            color: #ffffff;
+            transition: border-color 0.3s, transform 0.2s, background 0.3s;
         }
 
         .contact-card:hover {
             border-color: #FF9900;
-            color: #FF9900;
+            background: #232838;
+            transform: translateY(-2px);
+        }
+
+        .contact-icon-wrap {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 153, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.3s;
+        }
+
+        .contact-card:hover .contact-icon-wrap {
+            background: rgba(255, 153, 0, 0.2);
         }
 
         .contact-icon {
-            font-size: 1.2rem;
-        }
+            font-size: 1.3rem;
         }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-value {
+            font-size: 0.95rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .guestbook {
+            background: #1a1f2e;
+            border: 1px solid #2d3748;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 40px;
+        }
+
+        .guestbook-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .guestbook-input {
+            flex: 1;
+            min-width: 200px;
+            background: #0f1117;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
+        .guestbook-input:focus {
+            outline: none;
+            border-color: #FF9900;
+        }
+
+        .guestbook-btn {
+            background: #FF9900;
+            color: #0f1117;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .guestbook-btn:hover {
+            background: #e88a00;
+        }
+
+        .guestbook-list {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .guestbook-entry {
+            padding: 10px 14px;
+            background: #0f1117;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            color: #a0aec0;
+        }
+
+        .guestbook-entry strong {
+            color: #ffffff;
         }
     </style>
 </head>
@@ -232,6 +324,7 @@
         <span class="badge outline">Linux</span>
     </div>
 </header>
+
 <div class="container">
 
     <h2 class="section-title">Projects</h2>
@@ -243,39 +336,51 @@
             <div class="tags">
                 <span class="tag">S3</span>
                 <span class="tag">CloudFront</span>
-		<span class="tag">No-IP</span>
+                <span class="tag">No-IP</span>
                 <span class="tag">ACM</span>
             </div>
         </div>
 
-	<div class="project-card">
-	    <h3>Project 2 — 3-Tier Web App</h3>
-	    <p>High availability web application with Auto Scaling, 
-	    Application Load Balancer, and RDS MySQL database 
-	    across 2 Availability Zones.</p>
-	    <div class="tags">
-	        <span class="tag">VPC</span>
-	        <span class="tag">ALB</span>
-	        <span class="tag">Auto Scaling</span>
-	        <span class="tag">RDS</span>
-	        <span class="tag">MySQL</span>
-	    </div>
-	</div>
-<div class="project-card">
-    <h3>Project 2 — 3-Tier Web App ✅</h3>
-    <p>High availability web application with Auto Scaling,
-    Application Load Balancer, and RDS MySQL database
-    across 2 Availability Zones. Infrastructure automated
-    with Terraform and CloudFormation.</p>
-    <div class="tags">
-        <span class="tag">VPC</span>
-        <span class="tag">ALB</span>
-        <span class="tag">Auto Scaling</span>
-        <span class="tag">RDS</span>
-        <span class="tag">Terraform</span>
-        <span class="tag">CloudFormation</span>
+        <div class="project-card">
+            <h3>Project 2 — 3-Tier Web App ✅</h3>
+            <p>High availability web application with Auto Scaling,
+            Application Load Balancer, and RDS MySQL database
+            across 2 Availability Zones. Infrastructure automated
+            with Terraform and CloudFormation.</p>
+            <div class="tags">
+                <span class="tag">VPC</span>
+                <span class="tag">ALB</span>
+                <span class="tag">Auto Scaling</span>
+                <span class="tag">RDS</span>
+                <span class="tag">Terraform</span>
+                <span class="tag">CloudFormation</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Project 3 — Serverless API ✅</h3>
+            <p>REST API built with API Gateway, Lambda, and DynamoDB.
+            See it live below in the guestbook — fully serverless,
+            scales automatically, near-zero cost.</p>
+            <div class="tags">
+                <span class="tag">API Gateway</span>
+                <span class="tag">Lambda</span>
+                <span class="tag">DynamoDB</span>
+                <span class="tag">Python</span>
+            </div>
+        </div>
+
     </div>
-</div>
+
+    <h2 class="section-title">Guestbook — Live Serverless API</h2>
+    <div class="guestbook">
+        <div class="guestbook-form">
+            <input type="text" id="visitorName" class="guestbook-input" placeholder="Your name...">
+            <button onclick="addVisitor()" class="guestbook-btn">Sign Guestbook</button>
+        </div>
+        <div id="guestbookList" class="guestbook-list">
+            <p style="color: #718096;">Loading visitors...</p>
+        </div>
     </div>
 
     <h2 class="section-title">Skills</h2>
@@ -284,32 +389,112 @@
         <span class="skill">AWS S3</span>
         <span class="skill">AWS IAM</span>
         <span class="skill">AWS CloudFront</span>
+        <span class="skill">AWS VPC</span>
+        <span class="skill">AWS RDS</span>
+        <span class="skill">AWS Auto Scaling</span>
+        <span class="skill">AWS Load Balancing</span>
+        <span class="skill">AWS CloudFormation</span>
+        <span class="skill">AWS Lambda</span>
+        <span class="skill">API Gateway</span>
+        <span class="skill">DynamoDB</span>
+        <span class="skill">Terraform</span>
         <span class="skill">Linux</span>
         <span class="skill">Bash Scripting</span>
         <span class="skill">Nginx</span>
+        <span class="skill">MySQL</span>
         <span class="skill">Git</span>
         <span class="skill">AWS CLI</span>
+        <span class="skill">Security Groups</span>
+        <span class="skill">Let's Encrypt SSL</span>
+    </div>
+
+    <h2 class="section-title">Contact</h2>
+    <div class="contact">
+        <a href="mailto:hani.khamees@web.de" class="contact-card">
+            <div class="contact-icon-wrap">
+                <span class="contact-icon">✉️</span>
+            </div>
+            <div class="contact-text">
+                <span class="contact-label">Email</span>
+                <span class="contact-value">hani.khamees@web.de</span>
+            </div>
+        </a>
+        <a href="https://github.com/Hani-hash" target="_blank" class="contact-card">
+            <div class="contact-icon-wrap">
+                <span class="contact-icon">🐙</span>
+            </div>
+            <div class="contact-text">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">Hani-hash</span>
+            </div>
+        </a>
+        <a href="https://www.linkedin.com/in/hani-khamees-855015132/" target="_blank" class="contact-card">
+            <div class="contact-icon-wrap">
+                <span class="contact-icon">💼</span>
+            </div>
+            <div class="contact-text">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">hani-khamees</span>
+            </div>
+        </a>
     </div>
 
 </div>
-<h2 class="section-title">Contact</h2>
-    <div class="contact">
-        <a href="mailto:hani.khamees@web.de" class="contact-card">
-            <span class="contact-icon">✉️</span>
-            <span>hani.khamees@web.de</span>
-        </a>
-        <a href="https://github.com/Hani-hash" target="_blank" class="contact-card">
-            <span class="contact-icon">🐙</span>
-            <span>github.com/Hani-hash</span>
-        </a>
-        <a href="https://www.linkedin.com/in/hani-khamees-855015132/" target="_blank" class="contact-card">
-            <span class="contact-icon">💼</span>
-            <span>linkedin.com/in/hani-khamees</span>
-        </a>
-    </div>
+
 <footer>
     Hosted on AWS EC2 — eu-north-1 (Stockholm) · Built by Hani Khamees
 </footer>
+
+<script>
+    const API_URL = "https://dm0gxvp9d8.execute-api.eu-north-1.amazonaws.com/visitors";
+
+    async function loadVisitors() {
+        try {
+            const response = await fetch(API_URL);
+            const visitors = await response.json();
+            const list = document.getElementById('guestbookList');
+
+            if (visitors.length === 0) {
+                list.innerHTML = '<p style="color: #718096;">No visitors yet — be the first!</p>';
+                return;
+            }
+
+            visitors.sort((a, b) => new Date(b.visited_at) - new Date(a.visited_at));
+
+            list.innerHTML = visitors.map(v => `
+                <div class="guestbook-entry">
+                    <strong>${v.name}</strong>
+                    <span>${new Date(v.visited_at).toLocaleString()}</span>
+                </div>
+            `).join('');
+        } catch (error) {
+            document.getElementById('guestbookList').innerHTML =
+                '<p style="color: #718096;">Could not load visitors.</p>';
+        }
+    }
+
+    async function addVisitor() {
+        const nameInput = document.getElementById('visitorName');
+        const name = nameInput.value.trim();
+
+        if (!name) return;
+
+        try {
+            await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: name })
+            });
+
+            nameInput.value = '';
+            loadVisitors();
+        } catch (error) {
+            alert('Could not sign guestbook. Try again!');
+        }
+    }
+
+    loadVisitors();
+</script>
 
 </body>
 </html>
