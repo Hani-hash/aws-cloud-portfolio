@@ -4,10 +4,10 @@ Hands-on AWS projects built from scratch, documented end-to-end,
 and automated with Infrastructure as Code. Every project runs on
 real AWS infrastructure.
 
-## 🌐 Live Site
+##  Live Site
 https://admin-hani.ddns.net
 
-## 📬 Contact
+##  Contact
 - Email: hani.khamees@web.de
 - GitHub: https://github.com/Hani-hash
 - LinkedIn: https://www.linkedin.com/in/hani-khamees-855015132/
@@ -66,7 +66,7 @@ git push → GitHub Actions → Docker build → ECR → ECS Fargate → Live ap
 
 ---
 
-## 🛠️ Skills
+##  Skills
 
 **AWS Services:**
 EC2 · S3 · VPC · RDS · Lambda · API Gateway · DynamoDB ·
@@ -83,13 +83,13 @@ CI/CD · Containerization · Network Security · Cost Optimization
 
 ---
 
-## 📜 Certifications
+##  Certifications
 - AWS Certified Cloud Practitioner — in progress (retake scheduled)
 - AWS Certified Solutions Architect Associate — planned
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 .
 ├── index.html                      → portfolio site source
 ├── deploy.sh                       → S3 deploy script (Project 1)
