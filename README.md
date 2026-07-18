@@ -1,13 +1,13 @@
 # AWS Cloud Engineer Portfolio — Hani Khamees
 
-Hands-on AWS projects built from scratch while learning cloud engineering.
-Every project is deployed on real AWS infrastructure, documented, and
-where possible automated with Infrastructure as Code.
+Hands-on AWS projects built from scratch, documented end-to-end,
+and automated with Infrastructure as Code. Every project runs on
+real AWS infrastructure.
 
-## Live Site
+## 🌐 Live Site
 https://admin-hani.ddns.net
 
-## Contact
+## 📬 Contact
 - Email: hani.khamees@web.de
 - GitHub: https://github.com/Hani-hash
 - LinkedIn: https://www.linkedin.com/in/hani-khamees-855015132/
@@ -16,57 +16,88 @@ https://admin-hani.ddns.net
 
 ## Projects
 
-### Project 1 — Static Website (S3 + CloudFront)
-A personal portfolio site hosted entirely on AWS with HTTPS and a CDN.
-
-**Services:** S3, CloudFront, ACM, No-IP (DNS)
-**Notes:** see `week1-notes.md` to `week5-notes.md`
-
-### Project 2 — 3-Tier Web Application
-A highly available web application running across two Availability Zones,
-with traffic distributed by a load balancer and auto-scaled EC2 instances
-backed by a private RDS MySQL database.
+### ✅ Project 1 — Static Website (S3 + CloudFront)
+A personal portfolio site hosted entirely on AWS — serverless,
+HTTPS, global CDN delivery, automated deployment script.
 
 **Architecture:**
-```
-Internet → Load Balancer → Auto Scaling Group (EC2 x2 AZs) → RDS MySQL (private subnet)
-```
+Browser → Route 53 → CloudFront (HTTPS + CDN) → S3 (private origin)
 
-**Services:** VPC, ALB, Auto Scaling, EC2, RDS MySQL
-**Infrastructure as Code:** Terraform (`terraform-project2/`) and CloudFormation (`project2-cloudformation1.yaml`)
-**Notes:** see `project2-notes.md`
-
-### Project 3 — Serverless REST API
-A fully serverless guestbook API — no servers to manage, scales automatically,
-near-zero cost. Live and interactive on the portfolio site above.
-
-**Architecture:**
-```
-Client → API Gateway → Lambda (Python) → DynamoDB
-```
-
-**Services:** API Gateway (HTTP API), Lambda, DynamoDB, IAM
-**Notes:** see `project3-notes.md`
+**Services:** S3, CloudFront, ACM, No-IP, AWS CLI
+**IaC:** bash deploy script (`deploy.sh`)
 
 ---
 
-## Skills Demonstrated
-AWS EC2 · S3 · IAM · VPC · RDS · Lambda · API Gateway · DynamoDB ·
-CloudFront · Auto Scaling · Load Balancing · CloudFormation · Terraform ·
-Linux · Bash Scripting · Nginx · MySQL · Git · AWS CLI
+### ✅ Project 2 — 3-Tier Web Application
+Highly available web application across 2 Availability Zones
+with auto-scaling and a private RDS database. Full infrastructure
+automated with both Terraform and CloudFormation.
 
-## Certifications
-- AWS Certified Cloud Practitioner — in progress
+**Architecture:**
+Internet → ALB → Auto Scaling Group (EC2 x2 AZs) → RDS MySQL (private subnet)
+
+**Services:** VPC, ALB, Auto Scaling, EC2, RDS MySQL
+**IaC:** Terraform (`terraform-project2/`) + CloudFormation (`project2-cloudformation1.yaml`)
+
+---
+
+### ✅ Project 3 — Serverless REST API
+A fully serverless guestbook API — no servers, scales automatically,
+near-zero cost. Live and interactive on the portfolio site.
+
+**Architecture:**
+Client → API Gateway (HTTP API) → Lambda (Python) → DynamoDB
+
+**Services:** API Gateway, Lambda, DynamoDB, IAM, CloudWatch
+**Live demo:** https://admin-hani.ddns.net (sign the guestbook!)
+
+---
+
+### ✅ Project 4 — CI/CD Pipeline with Docker + ECS Fargate
+Automated deployment pipeline — push code to GitHub and it
+automatically builds a Docker image, pushes to ECR, and deploys
+to ECS Fargate. Zero manual steps, zero servers to manage.
+
+**Architecture:**
+git push → GitHub Actions → Docker build → ECR → ECS Fargate → Live app
+
+**Services:** Docker, ECR, ECS Fargate, GitHub Actions, IAM
+**Pipeline:** `.github/workflows/deploy.yml`
+
+---
+
+## 🛠️ Skills
+
+**AWS Services:**
+EC2 · S3 · VPC · RDS · Lambda · API Gateway · DynamoDB ·
+CloudFront · Auto Scaling · ALB · ECS · ECR · Fargate ·
+CloudFormation · IAM · CloudWatch · ACM
+
+**DevOps & Tools:**
+Docker · Terraform · GitHub Actions · Bash · Linux · Nginx ·
+Git · AWS CLI · Python
+
+**Concepts:**
+High Availability · Infrastructure as Code · Serverless ·
+CI/CD · Containerization · Network Security · Cost Optimization
+
+---
+
+## 📜 Certifications
+- AWS Certified Cloud Practitioner — in progress (retake scheduled)
 - AWS Certified Solutions Architect Associate — planned
 
-## Repo Structure
-```
+---
+
+## 📁 Repository Structure
 .
-├── index.html                     → portfolio site source
-├── deploy.sh                      → S3 deploy script (Project 1)
-├── project2-notes.md              → Project 2 documentation
-├── project2-cloudformation1.yaml  → Project 2 CloudFormation template
-├── project3-notes.md              → Project 3 documentation
-├── terraform-project2/            → Project 2 Terraform code
-└── week1-notes.md ... week6-notes.md → daily learning notes
-```
+├── index.html                      → portfolio site source
+├── deploy.sh                       → S3 deploy script (Project 1)
+├── project2-notes.md               → Project 2 documentation
+├── project2-cloudformation1.yaml   → Project 2 CloudFormation
+├── project3-notes.md               → Project 3 documentation
+├── project4-notes.md               → Project 4 documentation
+├── terraform-project2/             → Project 2 Terraform code
+├── project4-docker-app/            → Project 4 Flask app + Dockerfile
+├── .github/workflows/deploy.yml    → GitHub Actions CI/CD pipeline
+└── week1-notes.md ... week6-notes.md → learning notes
