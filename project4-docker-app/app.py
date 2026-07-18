@@ -9,7 +9,7 @@ def home():
     <h1>Hello from a Docker container!</h1>
     <p>Built by Hani Khamees</p>
     <p>Hostname: {os.uname().nodename}</p>
-    <p>Project 4 - CI/CD Pipeline - Automated Deployment v2</p>
+    <p>Project 4 - CI/CD Pipeline - Automated Deployment v3</p>
     """
 
 @app.route('/health')
